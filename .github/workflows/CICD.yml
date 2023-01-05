@@ -36,10 +36,6 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
-      - name: Install Dependencies
-        run: |
-          npm install
-          npm run build
 
   # Deployment job
   deploy:
@@ -52,7 +48,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-      - name: npm install, build and test
-        run: |
-          npm install
-          npm run build
