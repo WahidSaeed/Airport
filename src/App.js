@@ -1,8 +1,16 @@
-import { useState } from 'react'
-import { Dialog } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useState } from "react";
+import TripsDataTable from "./ui-component/DataTable";
+import SearchFilter from "./ui-component/SearchFilter";
 
 function App() {
+  const [flights, setFlights] = useState([]);
+  const [isNoRecord, setIsNoRecord] = useState(false);
+
+  const onSearch = (data) => {
+    console.log("onSearch: ", data);
+    setFlights(data);
+    setIsNoRecord(data.length == 0);
+  };
 
   return (
     <div className="isolate bg-white">
@@ -62,27 +70,12 @@ function App() {
       </div>
       <main>
         <div className="relative px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
+          <div className="mx-auto max-w-3xl pt-10 pb-10">
             <div>
-              <div>
-                <h1 className="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                  Flight Search
-                </h1>
-                <p className="mt-6 text-lg leading-8 text-gray-600 sm:text-center">
-                  To search flights please select origin and destination along with departure date
-                </p>
-                <div className="mt-8 flex gap-x-4 sm:justify-center">
-                  <button className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700">
-                    Search Flights {" "}
-                    <span className="">
-                      ⌕ 
-                    </span>
-                  </button>
-                </div>
-              </div>
-
+              <SearchFilter onSearchCompleted={onSearch} />
             </div>
           </div>
+          <TripsDataTable isNoRecord={isNoRecord} data={flights} />
         </div>
       </main>
     </div>
