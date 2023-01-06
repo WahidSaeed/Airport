@@ -1,6 +1,7 @@
 {
   "name": "airport",
   "version": "0.1.0",
+  "homepage": "https://wahidsaeed.github.io/Airport/",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -16,6 +17,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",
@@ -40,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "tailwindcss": "^3.2.4"
   }
 }
