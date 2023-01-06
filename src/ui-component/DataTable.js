@@ -24,9 +24,10 @@ export default function TripsDataGrid({ isNoRecord, data }) {
                     key={`port`}
                     className="my-8 rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
                   >
-                    <a _href="link" className="cursor-pointer">
+                    <a href="#" className="cursor-pointer">
                       <figure>
                         <img
+                            alt="ThumbNail"
                           src="./Images/airport-thumbnail.jpg"
                           className="rounded-t h-50 w-full object-cover"
                         />

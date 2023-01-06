@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-
 export default function DatePicker({ title, onSelected }) {
 
   const onDateSelect = (event) => {

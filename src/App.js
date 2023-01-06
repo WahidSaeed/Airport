@@ -9,7 +9,7 @@ function App() {
   const onSearch = (data) => {
     console.log("onSearch: ", data);
     setFlights(data);
-    setIsNoRecord(data.length == 0);
+    setIsNoRecord(data.length === 0);
   };
 
   return (
